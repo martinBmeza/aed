@@ -7,7 +7,7 @@ public class Recordatorio {
 
     public Recordatorio(String mensaje, Fecha fecha, Horario horario) {
         this.mensaje = mensaje;
-        this.fecha = fecha;
+        this.fecha = new Fecha(fecha);
         this.horario = horario;
     }
 
@@ -16,8 +16,7 @@ public class Recordatorio {
     }
 
     public Fecha fecha() {
-        Fecha f = new Fecha(fecha);
-        return f;
+        return new Fecha(fecha);
     }
 
     public String mensaje() {
@@ -26,8 +25,9 @@ public class Recordatorio {
 
     @Override
     public String toString() {
-        // Implementar
-        return "";
+        return mensaje + " @ " + Integer.toString(fecha.dia()) +
+        "/" + Integer.toString(fecha.mes()) +" "+ 
+        Integer.toString(horario.hora()) + ":" + Integer.toString(horario.minutos());
     }
 
     @Override

@@ -1,31 +1,31 @@
-package aed;
+    package aed;
 
 public class Fecha {
-    private int d;
-    private int m;
+    private int dia;
+    private int mes;
 
     public Fecha(int dia, int mes) {
-        d = dia;
-        m = mes;
+        this.dia = dia;
+        this.mes = mes;
     }
 
     public Fecha(Fecha otro) {
-        d = otro.dia();
-        m = otro.mes();       
+        dia = otro.dia();
+        mes = otro.mes();       
     }
 
     public Integer dia() {
-        return d;
+        return dia;
     }
 
     public Integer mes() {
-        return m;
+        return mes;
     }
 
     @Override
     public String toString() {
         // Implementar
-        return Integer.toString(d) + "/" + Integer.toString(m);
+        return Integer.toString(dia) + "/" + Integer.toString(mes);
     }
 
     @Override
@@ -37,16 +37,16 @@ public class Fecha {
         }
         //casteo
         Fecha otraFecha = (Fecha) otra;
-        boolean res = (otraFecha.dia() == d && otraFecha.mes() == m);
+        boolean res = (otraFecha.dia() == dia && otraFecha.mes() == mes);
         return res;
     }
 
     public void incrementarDia() {
-        if (d == diasEnMes(m)) {
-            d = 1;
-            m = (m++ % 12) + 1;
+        if (dia == diasEnMes(mes)) {
+            dia = 1;
+            mes = (mes++ % 12) + 1;
         } else {
-            d++;
+            dia++;
         }
     }
 

@@ -11,6 +11,12 @@ public class Recordatorio {
         this.horario = horario;
     }
 
+    public Recordatorio(Recordatorio otro) {
+        mensaje = new String(otro.mensaje());
+        fecha = new Fecha(otro.fecha());
+        horario = new Horario(otro.horario());
+    }
+
     public Horario horario() {
         return horario;
     }
@@ -32,8 +38,17 @@ public class Recordatorio {
 
     @Override
     public boolean equals(Object otro) {
-        // Implementar
-        return true;
+        boolean otroEsNull = (otro == null);
+        boolean claseDistinta = otro.getClass() != this.getClass();
+        if (otroEsNull || claseDistinta) {
+            return false;
+        }
+        //casteo
+        Recordatorio otroRecordatorio = (Recordatorio) otro;
+        boolean res = (otroRecordatorio.mensaje.equals(mensaje) && 
+                       otroRecordatorio.fecha.equals(fecha) && 
+                       otroRecordatorio.horario.equals(horario));
+        return res;
     }
 
 }

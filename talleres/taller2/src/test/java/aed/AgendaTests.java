@@ -138,8 +138,26 @@ public class AgendaTests {
         Recordatorio recordatorio = new Recordatorio(mensaje, f, h);
 
         assertEquals("Consulta con dentista @ 10/6 9:45", recordatorio.toString());
-
     }
+
+
+    @Test
+    void RecEquals() {
+        Fecha f = new Fecha(10, 6);
+        Horario h = new Horario(9, 45);
+        String mensaje1 = "Consulta con dentista";
+        String mensaje2 = "Consulta con dentista";
+        String mensaje3 = "Consultaa con dentista";
+        
+        Recordatorio recordatorio1 = new Recordatorio(mensaje1, f, h);
+        Recordatorio recordatorio2 = new Recordatorio(mensaje2, f, h);
+        Recordatorio recordatorio3 = new Recordatorio(mensaje3, f, h);
+
+        assertEquals(recordatorio1, recordatorio2);
+        assertNotEquals(recordatorio1, recordatorio3);
+    }
+
+
 
     @Test
     void crearAgenda() {
@@ -178,7 +196,7 @@ public class AgendaTests {
                 .concat("Clase Algoritmos @ 10/5 17:0\n")
                 .concat("Labo Algoritmos @ 10/5 19:0\n");
 
-        assertEquals(esperado, a.toString());
+            assertEquals(esperado, a.toString());
 
         a.incrementarDia();
 

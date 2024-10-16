@@ -17,3 +17,6 @@ puntero al primer elemento no sea null?
 
 5 - Como hago manejo de errores en el codigo? Por ejemplo, si quiero obtener el elemento en la posicion
 3 de una lista que tiene solo 2 elementos. 
+
+docu de tipos genericos
+https://docs.oracle.com/javase/tutorial/java/generics/types.html

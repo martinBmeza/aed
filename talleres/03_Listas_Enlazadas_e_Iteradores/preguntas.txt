@@ -1,0 +1,19 @@
+1 - Cuando defino el nodo, el valor toma un tipo predeterminado (por ejemplo int).
+Esto se define en el constructor de la clase Nodo que se definde dentro de la clase
+ListaEnlazada. Que pasa si quiero hacer una lista enlazada que funcione para cualquier
+tipo de dato? o inclusive un objeto? Como defino el dato del Nodo, como un puntero? 
+
+2 - Cuando defino el constructor de Nodo, en el ejemplo de la clase no aclaro si este 
+constructor es privado o publico, que pasa si no lo aclaro? Cuando no hace falta aclararlo?
+siempre toma lo mismo por defecto? 
+
+3 - El puntero es del mismo tipo que el dato? Cuando defino la lista enlazada, una variable
+privada deberia ser el puntero al primer elemento. Sin embargo en el ejemplo de la clase
+definimos a esta variable como un Nodo, no como un puntero a Nodo. Es distinto el puntero
+a un Nodo que el puntero a otra clase o tipo de dato? 
+
+4 - En el ejemplo de la clase, cuando hacemos agregarAdelante no deberiamos chequear primero que el 
+puntero al primer elemento no sea null?
+
+5 - Como hago manejo de errores en el codigo? Por ejemplo, si quiero obtener el elemento en la posicion
+3 de una lista que tiene solo 2 elementos. 
